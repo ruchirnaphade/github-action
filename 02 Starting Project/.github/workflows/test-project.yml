@@ -15,6 +15,7 @@ jobs:
       - name: Run test
         run: npm test
   deploy:
+    needs: test-project #condition to run this job ONLY if above job is successfully completes
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
